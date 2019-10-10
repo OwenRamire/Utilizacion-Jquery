@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+ 
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado de los alumnos</title>
+    <!--vincular con framework bulma css-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
+
+     <!--Sentencia jquery-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+     <script>
+        $(document).ready(function(){
+            $(".section").css({"padding":"30px 24px"});// espacio para el parrafo de la pagina 
+            $("#materia").text("Programación web").css({"font-size":"50px"});
+            $("#grupo").text("Grupo 5to. A").css({"font-size":"35px"});
+            $("#maestro").append("Profesor: <strong>Jose Nabor Ramirez Morfin<strong/>").css({"font-size":"20px"});
+            $("#alumnos").text("Listado de alumnos").css({ "font-weight":"bold" , "text-align":"center", "font-size":"20px" });
+            $("ol").css({"border":"thin solid black"});
+            $(".color").css({"background-color":"gray"});
+            $("li").on({
+                mouseenter:function(){
+                    $(this).css({"background-color":"lightgray", "cursor": "pointer"});        
+                },//fin funcion mouse enter
+                mouseout:function() {
+                    $(this).css({"background-color":"white"});
+                    $(".color").css({"background-color":"gray"});
+                },// fin funcion mouse out
+                click:function() {
+                    $("#datos").css({"background-color":"green"});
+                    $("#resultado").text("Resultado: ");
+                    $("span").text($(this).text()).css({"color":"white", "font-weight":"bold"});
+                }//fin funcion click
+             });//terminacion de la funcion .on
+             $(".footer").css({"background-color":"lightgrayx", "padding":"30px 24px"});
+        });
+                 
+     </script>
+    
+</head>
+<body>
+    <!--Colocar hero banner de bulma-->
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div>
+                <h1 class="title">Universidad de colima</h1>
+                <h2 class="subtitle">Facultad de telematica</h2>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--Aplicar clases y elementos de bulma para dar acomodo al contenido-->
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-11 is-offset-one">
+                <section class="section ">
+                    <div class="container">
+                        <h1 class="title" id="materia"></h1>
+                        <h2 class="subtitle" id="grupo"></h2>
+                        <h3 id="maestro"></h3> 
+                        <p id="alumnos"></p>
+                    </div>
+                </section>
+                <div class="content">
+                    <ol type="1">
+                        <li class="color">ALBERTO AGUAYO VARGAS</li>
+                        <li>ALDO OMAR ENRIQUEZ VELAZQUEZ</li>
+                        <li class="color">DIANA ISABEL ARCEO SUAREZ</li>
+                        <li>EDGAR ALEJANDRO GALBEZ SUAREZ</li>
+                        <li class="color">EFREN MANUEL HERNANDEZ ZU&Ntilde;IGA</li>
+                        <li>ERIK ULISES FAJARDO SOLORZANO</li>
+                        <li class="color">GONZALO ROJAS ZAMORA</li>
+                        <li>MARIA GUADALUPE GALLEGOS SEVILLA</li>
+                        <li class="color">MAURICIO NAVARRO CORTES</li>
+                        <li>MERIDA FRANCHESCA HERNANDEZ CASTA&Ntilde;EDA</li>
+                        <li class="color">OWEN OMAR RAMIREZ LOPEZ</li>
+                        <li>ROBERTO PLONEDA ESPINDOLA</li>
+                    </ol>
+                </div>
+                <div id="datos">
+                    <p><strong id="resultado"></strong><span></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Colocar Footer de bulma-->
+    <footer class="footer ">
+        <div class="content has-text-centered">
+            <p>&copy; Desarrollado Por <a href="#">Owen Ramirez</a></p>        
+        </div>
+    </footer>
+    
+</body>
+</html>
